@@ -1,4 +1,6 @@
 import { useMediaQuery } from 'react-responsive';
+import DesktopMain from './web/components/DesktopMain';
+import MobileMain from './mobile/components/MobileMain'
 
 
 function App() {
@@ -6,7 +8,7 @@ function App() {
     query: "(min-width: 768px)"
   })
 
-  const isWeb = isPc ? 'PC입니다' : 'Mobile입니다';
+  const isWeb = isPc ? <DesktopMain /> : <MobileMain />;
 
   return (
     <div className="App">
