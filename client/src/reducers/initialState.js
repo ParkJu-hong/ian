@@ -1,5 +1,6 @@
 const result = {
-    selected: ''
+    selected: '',
+    isMobileMenu: false
 };
 
 export default result;

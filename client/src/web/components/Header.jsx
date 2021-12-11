@@ -5,11 +5,21 @@ import { useDispatch } from 'react-redux';
 function Header() {
 
     const dispatch = useDispatch()
-    // menus: ['Introduction', 'Gallery', 'Notice', 'Question', 'Waytocome'],
 
     return (
         <div style={{ display: 'flex' }}>
-            <Logo src="/image/ian_images/logo.jpeg" alt="logo" ></Logo>
+            <Logo 
+            src="/image/ian_images/logo.jpeg"
+            alt="logo"
+            onClick={()=>{
+                dispatch({
+                    type: 'CHANGE_MENU',
+                    payload: { 
+                        selected: ''
+                    }
+                })
+            }}
+            ></Logo>
             <Menu src="/image/ian_images/menu_01.jpeg" alt="menu"
                 onClick={()=>{
                     dispatch({

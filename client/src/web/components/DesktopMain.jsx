@@ -15,6 +15,8 @@ import { useSelector } from 'react-redux';
 
 function checkMenu(str){
     switch(str){
+        case '':
+            return <Contents />;
         case 'Introduction':
             return <Introduction />;
         case 'Gallery':
@@ -32,6 +34,8 @@ function checkMenu(str){
 
 function DesktopMain() {
 
+    // 갤러리랑 공지사항에 많은 ajax나 axios요청을 할텐데 라우팅을 따로 해야될 듯함 by react-router-dom
+
     const [content, setContent] = useState(<Contents />)
 
     const selected = useSelector((state) => {
@@ -41,8 +45,6 @@ function DesktopMain() {
     useEffect(()=>{
         setContent(checkMenu(selected));
     }, [selected])
-    
-
     
 
     return (
@@ -59,10 +61,10 @@ export default DesktopMain
 const Main = styled.div`
     display: flex;
     flex-direction: column;
-    border: 1px solid yellowgreen;
+    /* border: 1px solid yellowgreen; */
     height: 100vh;
 `;
 
 const Div = styled.div`
-    border: 1px solid red;
+    /* border: 1px solid red; */
 `
