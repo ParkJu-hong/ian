@@ -31,26 +31,20 @@ function Gallery() {
     }
 
     function makeHowManyPage(count) {
+        // 태그안에 함수로 또 다른 태그를 감싼다음에 forFourMultiplyFour로 한 것처럼 렌더링할 것을 return 했는데
+        // 안되서 state을 배열로 만들어서
 
-        let temp = ['안녕하세요', '안녕하세요', '안녕하세요', '안녕하세요'];
+        let arr = [];
 
-        return <div>{
-        ()=>{
-            for(let i = 0; i < temp.length; i++){
-            <div>{temp[i]}</div>
+        for(let i = 1; i <= count; i++){
+            arr.push(<div style={{ margin: '10px'}}>{i}</div>)
         }
-        }    
-        }</div>;
 
-        return <div 
-        className="makeHowManyPage"
-        style={{ display: 'flex', justifyContent: 'center' }}>
-            {() => {
-                for (let i = 1; i <= count; i++) {
-                    return <div>{i}</div>
-                }
-            }}
-        </div>;;
+        return <div
+            className="makeHowManyPage"
+            style={{ display: 'flex', justifyContent: 'center' }}>
+                {arr}
+        </div>
     }
 
     useEffect(() => {
@@ -65,13 +59,18 @@ function Gallery() {
     }, []);
 
     return (
-            <div>
-                {/* {forRenderingOne}
-                {forRenderingTwo}
-                {forRenderingThree}
-                {forRenderingFour} */}
-                {pageCount}
-            </div>
+        <div>
+            {forRenderingOne}
+            {forRenderingTwo}
+            {forRenderingThree}
+            {forRenderingFour}
+            {pageCount}
+            {/* 
+                여기에 페이지 수를 이동하는 코드를 pageCount라는 state와 makeHowManyPage 함수로 렌더링 하려했는데
+                이상하게 렌더링이 되지않아 스택오버플로우에 올렸다.
+                https://stackoverflow.com/questions/70330427/why-this-function-doesnt-rendering-in-react
+            */}
+        </div>
     )
 }
 
