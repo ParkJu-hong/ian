@@ -1,4 +1,6 @@
-/* .App{
-    height: 500px;
-    color: red;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Koh+Santepheap:wght@100;700;900&display=swap');
+* {
+    font-family: 'nbgroteskregular','Noto Sans KR',Lato,Segoe UI,'Nanum Gothic',나눔고딕,맑은 고딕,AppleGothic,Dotum,sans-serif;
+    /* font-family: 'Koh Santepheap', cursive; */
+    box-sizing: border-box;
+}

@@ -1,19 +1,21 @@
-import React,{useState,useEffect} from 'react'
+import React from 'react';
+// import styled from 'styled-components';
 
 function Notice() {
-    const [temp,setTemp] = useState(false);
-    useEffect(()=>{
-        setTemp("angry")
-    },[])
+
     return (
-        <div>
-           <div style={{ display: 'flex', justifyContent: 'center', width: '40vw'}}>
-               <p>
-                   제목
-                </p>
-                <p>
-                날짜    
-                </p></div>
+        <div style={{ textAlign: 'center'}}>
+           <div style={{
+                display: 'flex',
+                justifyContent: 'space-around',
+                backgroundColor: '#708090',
+                fontSize: '30px',
+                marginRight: '20vw',
+                marginLeft: '20vw'
+                }}>
+            <div >제목</div>
+            <div>날짜</div>
+           </div>
         </div>
     )
 }
