@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import Map from './Map';
 
 function Waytocome() {
     return (
-        <div>
-            Waytocome
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+            <Map />
         </div>
     )
 }
