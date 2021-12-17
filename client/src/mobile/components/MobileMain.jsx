@@ -12,8 +12,8 @@ import Notice from './contentsComponents/Notice';
 import Question from './contentsComponents/Question';
 import Waytocome from './contentsComponents/Waytocome';
 
-function checkMenu(str){
-    switch(str){
+function checkMenu(str) {
+    switch (str) {
         case '':
             return <Contents />;
         case 'Introduction':
@@ -46,16 +46,19 @@ function MobileMain() {
         return state.reducerMenu.selected
     })
 
-    useEffect(()=>{
+    useEffect(() => {
         setContent(checkMenu(selected));
     }, [selected])
 
     return (
         <Main>
             {isMenu ? <Menubar /> : ''}
-            <Div style={{ flex: 0.2 }}><Header /></Div>
+            <Div style={{ flex: 0.2 }}><div></div><Header /></Div>
             <Div
-                style={{ flex: 0.6 }}
+                style={{
+                    flex: 0.6,
+                    marginTop: '18vh'
+                }}
                 onClick={() => {
                     dispatch({
                         type: 'CLOSE_MOBILE_MENU'

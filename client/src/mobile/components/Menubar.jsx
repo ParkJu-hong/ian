@@ -11,7 +11,8 @@ function Menubar() {
              position: 'fixed',
              height: '100vh',
              width: '30vw',
-             fontSize: '30px'
+             fontSize: '30px',
+             top: 100
         }}>
             <Menu 
             onClick={()=>{

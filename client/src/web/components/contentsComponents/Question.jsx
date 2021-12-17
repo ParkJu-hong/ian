@@ -24,7 +24,7 @@ function Question() {
 
     return (
         <div style={{ display: 'flex' }}>
-            <h3 className="area_tit" style={{ marginLeft: '13vw', flex: 0.2 }}>이안환경 서비스 <br></br>공지사항</h3>
+            <h3 className="area_tit" style={{ marginLeft: '13vw', flex: 0.2 }}>이안환경 서비스 <br></br>온라인 문의</h3>
             <div className="area_cont" style={{ display: 'flex', flexDirection: 'column', width: '100vw', flex: 0.7}}>
                 <div className="contents">
                     <hr style={{ border: 'solid 1px black' }}></hr>

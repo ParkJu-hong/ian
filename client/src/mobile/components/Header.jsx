@@ -13,8 +13,16 @@ function Header() {
 
     const dispatch = useDispatch();
 
+    // header을 position: 'fixed'로 해서 아래 내려도 메뉴가 안움직이게 하고 싶다.
+
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            position: 'fixed',
+            backgroundColor: 'white',
+            width: '100vw'
+            }}>
             <FontAwesomeIcon
                 icon={faBars}
                 size="3x"

@@ -6,7 +6,7 @@ function Introduction() {
             <img
                 src="/image/ian_images/ian_introduction.jpg"
                 alt="introduction"
-                style={{}}
+                style={{ width: '90vw'}}
             ></img>
             <div style={{
                 padding: '10px',
