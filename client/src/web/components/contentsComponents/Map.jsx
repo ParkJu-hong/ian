@@ -6,7 +6,7 @@ const options = {
   level: 3, //지도의 레벨(확대, 축소 정도)
 };
 
-function Map() {
+function Map({ _width = '500px', _heigth = '500px'}) {
   const container = useRef(null); //지도를 담을 영역의 DOM 레퍼런스
 
   useEffect(() => {
@@ -17,7 +17,7 @@ function Map() {
   return (
     <div
       className="map"
-      style={{ width: "500px", height: "500px" }}
+      style={{ width: _width, height: _heigth }}
       ref={container}
     ></div>
   );

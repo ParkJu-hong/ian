@@ -41,6 +41,7 @@ function MobileMain() {
     const dispatch = useDispatch();
 
     const [content, setContent] = useState(<Contents />)
+    const [marginTop, setMarginTop] = useState('0vh')
 
     const selected = useSelector((state) => {
         return state.reducerMenu.selected
@@ -48,6 +49,11 @@ function MobileMain() {
 
     useEffect(() => {
         setContent(checkMenu(selected));
+        if(selected === 'Gallery'){
+            setMarginTop('18vh');
+        }else{
+            setMarginTop('0vh');
+        }
     }, [selected])
 
     return (
@@ -57,7 +63,8 @@ function MobileMain() {
             <Div
                 style={{
                     flex: 0.6,
-                    marginTop: '18vh'
+                    // marginTop: '18vh' 마진 top을 왜 줬지..?
+                    marginTop: marginTop
                 }}
                 onClick={() => {
                     dispatch({
