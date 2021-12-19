@@ -7,8 +7,7 @@ const day = now.getDay();
 
 const resultBirth = `${year}년 ${month}월 ${day}일`;
 
-
-export default {
+const result = {
     pictures: [
         {id: 1, title: 'title', comments: '', src: url},
         {id: 2, title: 'title', comments: '', src: url},
@@ -36,3 +35,6 @@ export default {
     // 문의사항은 https://jsonplaceholder.typicode.com/posts 여기다가 get 요청보내서 json받아온 걸로 더미데이터 사용해서
     // 사용할 것
 }
+
+
+export default result;
