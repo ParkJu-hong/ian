@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import dummyPictures from '../../../dummyDate';
+import axios from 'axios';
 
 function Gallery() {
 
@@ -47,9 +48,23 @@ function Gallery() {
         </div>
     }
 
-    useEffect(() => {
+    useEffect(async () => {
         // 서버에서 줄때 무조건 객체 16개가 든 배열이 응답해와야 정상작동되는 코드다..
         setPageCount(makeHowManyPage(5))
+
+        await axios({
+            method: 'get',
+            url: 'http://localhost:3001/gallery/read',
+            params : {
+                id: 123
+            }
+        }).then((result) => {
+            console.log(result.data);
+            return;
+        })
+
+        // 이미지 뿌릴려면 AWS S3을 써야할 것 같다. 생활코딩에서 강의 듣고 공부를 해야할 듯하다.
+
 
         setForRenderingOne(forFourMultiplyFour(dummyPictures.pictures.slice(0, 4)));
         setForRenderingTwo(forFourMultiplyFour(dummyPictures.pictures.slice(4, 8)));
