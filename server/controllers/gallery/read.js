@@ -21,4 +21,6 @@ module.exports = async (req, res) => {
             res.json(result.rows);
             return;
         })
+
+        // 생활코딩 aws sdk 공부중.. sdk공부하면 연결해서 응답하면 될 듯
 }
