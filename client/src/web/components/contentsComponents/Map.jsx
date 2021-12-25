@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 
 const options = {
   //지도를 생성할 때 필요한 기본 옵션
+  // api rest key 는 어디에서 인증하는걸까..
   center: new window.kakao.maps.LatLng(37.6498864345427, 127.328661960946), //지도의 중심좌표.
   level: 3, //지도의 레벨(확대, 축소 정도)
 };
