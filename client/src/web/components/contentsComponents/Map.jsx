@@ -1,3 +1,8 @@
+
+/*
+
+
+
 import React, { useRef, useEffect } from "react";
 
 const options = {
@@ -25,3 +30,4 @@ function Map({ _width = '500px', _heigth = '500px'}) {
 }
 
 export default Map;
+*/
