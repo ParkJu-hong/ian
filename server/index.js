@@ -4,10 +4,27 @@ require('dotenv').config();
 const http = require('http');
 const cors = require('cors');
 // const cookieParser = require('cookie-parser');
+const parser = require('body-parser');
 const express = require('express');
 const controllers = require('./controllers');
 require("dotenv").config();
 const fs = require('fs');
+
+const path = require('path');
+const multer = require('multer');
+const upload = multer({ dest: './'})
+// const upload = multer({
+//   storage: multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, './img/');
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, new Date().valueOf() + path.extname(file.originalname));
+//     }
+//   }),
+// });
+// const multer = require('multer');
+
 const AWS = require('aws-sdk');
 const SESConfig = {
     apiVersion: "2015-03-31",
@@ -22,17 +39,20 @@ const S3 = new AWS.S3();
 
 const app = express();
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }))
-app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'OPTIONS'],
-    credentials: true
-}))
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: false }))
+// app.use(cors({
+//     origin: '*',
+//     methods: ['GET', 'POST', 'OPTIONS'],
+//     credentials: true
+// }))
+app.use(cors());
+app.use(parser.json());
+
 
 app.get('/gallery/read', controllers.read);
 app.post('/gallery/create', controllers.create);
-app.post('/uploadfile', (req, res) => {
+app.post('/uploadfile', upload.single('img'),(req, res) => {
     S3.listBuckets(function (err, data) {
         if (err) {
             console.log("listBuckets Error", err);
@@ -40,7 +60,9 @@ app.post('/uploadfile', (req, res) => {
             console.log("listBuckets Success", data.Buckets);
         }
     });
-    console.log('req.body.formData : ', Object.keys(req.body.formData).length); 
+    console.log(new Date().toLocaleTimeString());
+    console.log('req.file : ', req.file); 
+    // console.log('req.params')
 
     // fs.readFile(req.files.file.path, function(err, data){
     //     // Do something with the data (which holds the file information)
