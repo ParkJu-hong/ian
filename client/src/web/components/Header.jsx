@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function Header() {
 
@@ -8,20 +9,22 @@ function Header() {
 
     return (
         <div style={{ display: 'flex' }}>
-            <Logo 
-            src="/image/ian_images/logo.jpeg"
-            alt="logo"
-            onClick={()=>{
-                dispatch({
-                    type: 'CHANGE_MENU',
-                    payload: { 
-                        selected: ''
-                    }
-                })
-            }}
-            ></Logo>
+            <Link to="/">
+                <Logo
+                    src="/image/ian_images/logo.jpeg"
+                    alt="logo"
+                    onClick={() => {
+                        dispatch({
+                            type: 'CHANGE_MENU',
+                            payload: {
+                                selected: ''
+                            }
+                        })
+                    }}
+                ></Logo>
+            </Link>
             <Menu src="/image/ian_images/menu_01.jpeg" alt="menu"
-                onClick={()=>{
+                onClick={() => {
                     dispatch({
                         type: 'CHANGE_MENU',
                         payload: {
@@ -31,7 +34,7 @@ function Header() {
                 }}
             ></Menu>
             <Menu src="/image/ian_images/menu_02.jpeg" alt="menu"
-                onClick={()=>{
+                onClick={() => {
                     dispatch({
                         type: 'CHANGE_MENU',
                         payload: {
@@ -41,7 +44,7 @@ function Header() {
                 }}
             ></Menu>
             <Menu src="/image/ian_images/menu_03.jpeg" alt="menu"
-                onClick={()=>{
+                onClick={() => {
                     dispatch({
                         type: 'CHANGE_MENU',
                         payload: {
@@ -51,7 +54,7 @@ function Header() {
                 }}
             ></Menu>
             <Menu src="/image/ian_images/menu_04.jpeg" alt="menu"
-                onClick={()=>{
+                onClick={() => {
                     dispatch({
                         type: 'CHANGE_MENU',
                         payload: {
@@ -61,7 +64,7 @@ function Header() {
                 }}
             ></Menu>
             <Menu src="/image/ian_images/menu_05.jpeg" alt="menu"
-                onClick={()=>{
+                onClick={() => {
                     dispatch({
                         type: 'CHANGE_MENU',
                         payload: {

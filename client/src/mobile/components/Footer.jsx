@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
@@ -14,6 +15,9 @@ function Footer() {
             사업자등록번호  659-54-00668
             <br></br>
             Copyright@2021 이안환경 All Rights Reserved
+            <div><Link to="/manager"><button onClick={()=>{
+                
+            }}>관리자</button></Link></div>
         </div>
     )
 }

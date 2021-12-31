@@ -12,17 +12,16 @@ const fs = require('fs');
 
 const path = require('path');
 const multer = require('multer');
-const upload = multer({ dest: './'})
-// const upload = multer({
-//   storage: multer.diskStorage({
-//     destination: function (req, file, cb) {
-//       cb(null, './img/');
-//     },
-//     filename: function (req, file, cb) {
-//       cb(null, new Date().valueOf() + path.extname(file.originalname));
-//     }
-//   }),
-// });
+const upload = multer({
+  storage: multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './img/');
+    },
+    filename: function (req, file, cb) {
+      cb(null, new Date().valueOf() + path.extname(file.originalname));
+    }
+  }),
+});
 // const multer = require('multer');
 
 const AWS = require('aws-sdk');
@@ -39,15 +38,16 @@ const S3 = new AWS.S3();
 
 const app = express();
 
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }))
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }))
 // app.use(cors({
 //     origin: '*',
 //     methods: ['GET', 'POST', 'OPTIONS'],
 //     credentials: true
 // }))
-app.use(cors());
-app.use(parser.json());
+// app.use(cors());
+// app.use(parser.json());
 
 
 app.get('/gallery/read', controllers.read);

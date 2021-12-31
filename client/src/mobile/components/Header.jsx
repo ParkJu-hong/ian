@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 
 function Header() {
@@ -39,6 +40,7 @@ function Header() {
                     }
                 }}
             ></FontAwesomeIcon>
+            <Link to='/'>
             <Img
                 src="/image/ian_images/logo_mobile.jpeg"
                 alt="logo"
@@ -51,6 +53,7 @@ function Header() {
                     })
                 }}
             ></Img>
+            </Link>
         </div>
     )
 }

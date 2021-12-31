@@ -1,6 +1,7 @@
 import { useMediaQuery } from 'react-responsive';
 import DesktopMain from './web/components/DesktopMain';
-import MobileMain from './mobile/components/MobileMain'
+import MobileMain from './mobile/components/MobileMain';
+import { BrowserRouter } from 'react-router-dom';
 
 
 function App() {
@@ -11,9 +12,11 @@ function App() {
   const isWeb = isPc ? <DesktopMain /> : <MobileMain />;
 
   return (
-    <div className="App">
-      {isWeb}
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        {isWeb}
+      </div>
+    </BrowserRouter>
   );
 }
 

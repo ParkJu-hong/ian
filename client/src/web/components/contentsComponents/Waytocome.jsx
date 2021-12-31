@@ -5,8 +5,7 @@ import MakePictures from './MakePictures';
 function Waytocome() {
     return (
         <div style={{display: 'flex', justifyContent: 'center'}}>
-            <MakePictures />
-            {/* <Map /> */}
+            <Map />
         </div>
     )
 }

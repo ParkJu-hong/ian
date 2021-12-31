@@ -4,8 +4,7 @@ import Map from '../../../web/components/contentsComponents/Map';
 function Waytocome() {
     return (
         <div style={{ display: 'flex', justifyContent: 'center'}}>
-            // 맵
-            {/* <Map _width='300px' _heigth='300px'/> */}
+            <Map _width='300px' _heigth='300px'/>
         </div>
     )
 }
