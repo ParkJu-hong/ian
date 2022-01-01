@@ -8,6 +8,8 @@ export const reducerMenu = (state = initalState, action) => {
             return Object.assign({}, state, {isMobileMenu: true});
         case 'CLOSE_MOBILE_MENU':
             return Object.assign({}, state, {isMobileMenu: false});
+        case 'LOGIN_MANAGER':
+            return Object.assign({}, state, {ismanagerLogin: true});
         default:
             return state;
     }

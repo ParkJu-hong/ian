@@ -1,7 +1,8 @@
 import { useMediaQuery } from 'react-responsive';
 import DesktopMain from './web/components/DesktopMain';
 import MobileMain from './mobile/components/MobileMain';
-import { BrowserRouter } from 'react-router-dom';
+import ManagerMain from './web/components/managerComponents/ManagerMain';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 function App() {
@@ -13,9 +14,10 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
-        {isWeb}
-      </div>
+      <Routes>
+        <Route exact path='/' element={isWeb} />
+        <Route path="/manager" element={<ManagerMain />} />
+      </Routes>
     </BrowserRouter>
   );
 }

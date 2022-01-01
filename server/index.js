@@ -9,6 +9,7 @@ const express = require('express');
 const controllers = require('./controllers');
 require("dotenv").config();
 const fs = require('fs');
+const axios = require('axios');
 
 const path = require('path');
 const multer = require('multer');
@@ -75,9 +76,17 @@ app.post('/uploadfile', upload.single('img'),(req, res) => {
     // });
 
     res.status(201).send('OK')
+});
+
+app.get('/', (req, res)=>{
+    const accessToken = '';
+    console.log('req.body : ', req.body);
+    console.log('구글 OAuth 오케이');
+    // axios.get('https://www.googleapis.com/oauth2/v2/userinfo?access_token=');
+    res.status(200).send('구글 OAuth 오케이')
 })
 
-app.listen(3001, () => {
+app.listen(8080, () => {
     console.log('서버가 실행되었습니다')
 })
 

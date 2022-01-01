@@ -1,6 +1,7 @@
 const result = {
     selected: '',
-    isMobileMenu: false
+    isMobileMenu: false,
+    ismanagerLogin: false
 };
 
 export default result;
