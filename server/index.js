@@ -39,14 +39,10 @@ const S3 = new AWS.S3();
 
 const app = express();
 
-app.use(cors());
+app.use(cors()); // cors에 관해 블로깅해보자
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
-// app.use(cors({
-//     origin: '*',
-//     methods: ['GET', 'POST', 'OPTIONS'],
-//     credentials: true
-// }))
+
 // app.use(cors());
 // app.use(parser.json());
 
@@ -78,15 +74,10 @@ app.post('/uploadfile', upload.single('img'),(req, res) => {
     res.status(201).send('OK')
 });
 
-app.get('/', (req, res)=>{
-    const accessToken = '';
-    console.log('req.body : ', req.body);
-    console.log('구글 OAuth 오케이');
-    // axios.get('https://www.googleapis.com/oauth2/v2/userinfo?access_token=');
-    res.status(200).send('구글 OAuth 오케이')
-})
+app.post('/login', controllers.login);
+app.get('/isAuthorization', controllers.isAuthorization);
 
-app.listen(8080, () => {
+app.listen(3001, () => {
     console.log('서버가 실행되었습니다')
 })
 

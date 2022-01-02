@@ -10,6 +10,8 @@ export const reducerMenu = (state = initalState, action) => {
             return Object.assign({}, state, {isMobileMenu: false});
         case 'LOGIN_MANAGER':
             return Object.assign({}, state, {ismanagerLogin: true});
+        case 'ACCESS_TOKEN':
+            return Object.assign({}, state, {accessToken: action.payload.accessToken});
         default:
             return state;
     }
