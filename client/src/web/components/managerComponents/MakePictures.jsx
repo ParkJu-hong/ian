@@ -5,7 +5,6 @@ function MakePictures() {
     const [imgBase64, setImgBase64] = useState([]); // 파일 base64 미리보기
     const [imgFile, setImgFile] = useState(null);	//파일
 
-
     useEffect(() => {
         { console.log('imgBase64 : ', imgBase64) }
     }, [imgBase64])
@@ -110,7 +109,7 @@ const Main = styled.div`
 const AlreadyView = styled.div`
     flex: 0.5;
     /* border: 1px solid red; */
-    
+
 `
 
 const Board = styled.div`
